@@ -32,7 +32,7 @@ import retrofit.RequestInterceptor
 import retrofit.RestAdapter
 import retrofit.client.OkClient
 import retrofit.converter.JacksonConverter
-import javax.validation.Valid
+import jakarta.validation.Valid
 
 /**
  * Converts the list of BitBucket Configuration properties a collection of clients to access the BitBucket hosts

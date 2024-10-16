@@ -75,7 +75,7 @@ dependencies {
     implementation "com.google.code.gson:gson"
     implementation "com.google.guava:guava"
     implementation "javax.inject:javax.inject:1"
-    implementation "javax.validation:validation-api"
+    implementation "jakarta.validation:jakarta.validation-api"
 
     runtimeOnly "io.spinnaker.kork:kork-runtime"
 
@@ -86,5 +86,5 @@ dependencies {
     testImplementation "org.junit.jupiter:junit-jupiter-api"
     testImplementation "org.assertj:assertj-core"
 
-    testImplementation "com.github.tomakehurst:wiremock-jre8"
+    testImplementation "com.github.tomakehurst:wiremock:3.0.0-beta-8"
 }

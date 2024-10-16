@@ -30,8 +30,9 @@ dependencies {
   implementation "com.fasterxml.jackson.dataformat:jackson-dataformat-yaml"
   implementation "com.squareup.retrofit:converter-jackson"
   implementation "com.squareup.retrofit:retrofit"
-  implementation "io.reactivex:rxjava" // TODO(jervi): get rid of this dependency
-  implementation "javax.validation:validation-api"
+  implementation "io.reactivex.rxjava3:rxjava" // TODO(jervi): get rid of this dependency
+  implementation 'io.vavr:vavr:1.0.0-alpha-4'
+  implementation "jakarta.validation:jakarta.validation-api"
   implementation "javax.xml.bind:jaxb-api"
 
   testImplementation "com.squareup.okhttp:mockwebserver"

@@ -49,7 +49,7 @@ import org.springframework.web.servlet.HandlerMapping
 import retrofit.http.Query
 
 import javax.annotation.Nullable
-import javax.servlet.http.HttpServletRequest
+import jakarta.servlet.http.HttpServletRequest
 
 import static net.logstash.logback.argument.StructuredArguments.kv
 import static org.springframework.http.HttpStatus.NOT_FOUND
@@ -212,11 +212,10 @@ class BuildController {
 
   }
 
-  @RequestMapping(value = "/masters/{name}/jobs/**/update/{buildNumber}", method = RequestMethod.PATCH)
+  @RequestMapping(value = "/masters/{name}/jobs/**", method = RequestMethod.PATCH)
   @PreAuthorize("hasPermission(#master, 'BUILD_SERVICE', 'WRITE')")
   void update(
     @PathVariable("name") String master,
-    @PathVariable("buildNumber") Integer buildNumber,
     @RequestBody UpdatedBuild updatedBuild,
     HttpServletRequest request
   ) {
@@ -226,8 +225,9 @@ class BuildController {
       .dropRight(2)
       .join('/')
 
+    def var = request.getRequestURI().split('/')
     def buildService = getBuildService(master)
-    buildService.updateBuild(jobName, buildNumber, updatedBuild)
+    buildService.updateBuild(jobName, var[var.length -1].toInteger(), updatedBuild)
   }
 
   @RequestMapping(value = '/masters/{name}/jobs/**', method = RequestMethod.PUT)

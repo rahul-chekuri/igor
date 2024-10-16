@@ -1,5 +1,9 @@
 services.fiat.baseUrl: https://fiat.net
 
+spring:
+  mvc:
+    pathmatch:
+      matching-strategy: ANT_PATH_MATCHER
 netflix:
   appinfo:
     name: 'igor'

@@ -29,13 +29,13 @@ import com.netflix.spinnaker.kork.retrofit.exceptions.SpinnakerRetrofitErrorHand
 import com.netflix.spinnaker.retrofit.Slf4jRetrofitLogger;
 import com.squareup.okhttp.OkHttpClient;
 import io.github.resilience4j.circuitbreaker.CircuitBreakerRegistry;
+import jakarta.validation.Valid;
 import java.util.ArrayList;
 import java.util.Map;
 import java.util.Optional;
 import java.util.concurrent.TimeUnit;
 import java.util.function.Function;
 import java.util.stream.Collectors;
-import javax.validation.Valid;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.boot.autoconfigure.condition.ConditionalOnProperty;
 import org.springframework.boot.context.properties.EnableConfigurationProperties;
