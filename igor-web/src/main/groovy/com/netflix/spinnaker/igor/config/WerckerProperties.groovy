@@ -10,10 +10,10 @@ package com.netflix.spinnaker.igor.config
 
 import com.netflix.spinnaker.fiat.model.resources.Permissions
 import groovy.transform.CompileStatic
-import org.hibernate.validator.constraints.NotEmpty
+import jakarta.validation.constraints.NotEmpty
 import org.springframework.boot.context.properties.ConfigurationProperties
 
-import javax.validation.Valid
+import jakarta.validation.Valid
 
 /**
  * Helper class to map masters in properties file into a validated property map
